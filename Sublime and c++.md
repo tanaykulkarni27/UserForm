@@ -3,7 +3,7 @@
 <br>
 this the code to build system on sublime 
 <br>
-<p style="background-color: red">
+<p style="color: red">
  
 { <br> 
    "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
