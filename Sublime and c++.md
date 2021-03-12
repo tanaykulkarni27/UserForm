@@ -1,9 +1,10 @@
 <a href="https://www.compromath.com/2017/07/install-sublime-text-3-ubuntu-terminal.html"> Install sublime txt </a>
 <a href=""> Install sublime txt </a>
-<p>
+<br>
 this the code to build system on sublime 
 <br>
-  { <br> 
+<p bgcolor="gray">
+{ <br> 
    "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
    "working_dir": "${file_path}", <br>
