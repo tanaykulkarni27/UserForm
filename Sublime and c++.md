@@ -4,7 +4,7 @@
 this the code to build system on sublime 
 <br>
 <p style="color: red">
-
+<hr>
 { <br> 
    "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
