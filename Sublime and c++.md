@@ -1,5 +1,12 @@
 <a href="https://www.compromath.com/2017/07/install-sublime-text-3-ubuntu-terminal.html"> Install sublime txt </a>
 <a href=""> Install sublime txt </a>
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 <br>
 this the code to build system on sublime 
 <br>
