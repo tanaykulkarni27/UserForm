@@ -4,9 +4,7 @@
 this the code to build system on sublime 
 <br>
 <p style="color: red">
-```diff
-   
-- text in red 
+
 { <br> 
    "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
@@ -21,8 +19,6 @@ this the code to build system on sublime
    }<br>
  ]<br>
 }<br>
-@@ text in purple (and bold)@@
-```   
 </p>
 <p> " sudo apt-get update <br>
 sudo apt-get install terminator " use this code if ubuntu version is less then lts 20.04 </p>
