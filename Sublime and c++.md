@@ -5,6 +5,7 @@ this the code to build system on sublime
 <br>
 <p style="color: red">
 ```diff
+   
 - text in red 
 { <br> 
    "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
