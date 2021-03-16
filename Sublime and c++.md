@@ -5,19 +5,18 @@ this the code to build system on sublime
 <br>
 <p style="color: red">
 <hr>
-{ <br> 
-   "cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"",<br>
-   "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
-   "working_dir": "${file_path}", <br>
-   "selector": "source.c,source.c++,source.cpp",<br>
-   "shell":true,<br>
-   "variants": [<br>
-   { <br>
-       "name": "Run",<br>
-        "cmd" : ["gnome-terminal -- bash -c \"g++ $file_name ;echo -------------output--------------; ./a.out;echo;echo;  echo Press ENTER to continue; read line;exit; exec bash\""<br>
-     ],<br>
-   }<br>
- ]<br>
+{<br>
+"cmd": ["g++", "-std=c++14", "$file", "-o", "${file_path}/${file_base_name}"],<br>
+"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
+"working_dir": "${file_path}",<br>
+"selector": "source.c, source.c++, source.cxx, source.cpp",<br>
+"variants":<br>
+[<br>
+{<br>
+"name": "Run",<br>
+"cmd": ["bash", "-c", "g++ -std=c++14 '${file}' -o '${file_path}/${file_base_name}' && terminator -x bash -c '\"${file_path}/${file_base_name}\" ; read'"]<br>
+}<br>
+]<br>
 }<br>
 </p>
 <hr>
