@@ -28,12 +28,21 @@ class timer(Thread):
 			if m == 60:
 				m = 0
 				h += 1
-			if stopper == False:
+			if obj2.stopper == False:
 				s = 0
 				m = 0
 				h = 0
+				tmr = tk.Label(text = "Time -   {}:{}:{}".format(h,m,s))
+				tmr.configure(bg="blue",foreground="white")
+				tmr.pack(side = tk.LEFT)
+				cnvs.create_window(460,20,window = tmr)
 				return
+class stopp:
+	def __init__(self):
+		self.stopper = False
 obj1 = timer()
+obj2 = stopp()
+obj2.stopper = False
 #FILE CREATE CODE START
 # Label
 fn1 = tkf.Font(size=20)
@@ -48,6 +57,15 @@ cnvs.configure(bg="blue")
 cnvs2 = tk.Canvas(root,width = 100,height = 150)
 cnvs2.pack(side=tk.RIGHT,pady=30)
 cnvs2.configure(bg="blue")
+def ee():
+	obj2.stopper = False
+	obj1.join()
+# Button
+bf = tkf.Font(size=10)
+btn3 = tk.Button(text="RESET",width=9,command=ee)
+btn3.configure(font=bf,bg="yellow",foreground="black")
+btn3.pack(side=tk.LEFT,padx=10,pady = 0)
+cnvs2.create_window(50,20,window = btn3)
 # Title Label one 
 fn1 = tkf.Font(size=10)
 title_label = tk.Label(root,text="Create File")
@@ -64,8 +82,7 @@ cnvs.create_window(270,55,window = entry)
 
 #'''
 def file_creator():
-	global stopper
-	stopper = True
+	ee()
 	name = entry.get()
 	s = "/*\n"
 	s += "	Author :- Tanay Kulkarni\n"
@@ -90,7 +107,7 @@ def file_creator():
 	f = open(name,'w')
 	f.write(s)
 	f.close()
-	
+	obj2.stopper = True
 	obj1.start()
 #	os.system("subl {}".format(name))
 # Button
@@ -127,5 +144,6 @@ btn2.pack(side=tk.RIGHT,padx=10,pady = 20)
 cnvs2.create_window(50,120,window = btn2)
 # CMD CODE END
 #global stopper
-sst()
+ee()
 root.mainloop()	
+ee()
