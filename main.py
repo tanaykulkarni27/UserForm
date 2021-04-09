@@ -62,7 +62,7 @@ def file_creator():
 	f = open(name,'w')
 	f.write(s)
 	f.close()
-	os.system("subl {}".format(name))
+#	os.system("subl {}".format(name))
 # Button
 bf = tkf.Font(size=10)
 btn = tk.Button(text="CREATE",width=9,command=file_creator)
