@@ -2,13 +2,39 @@ import tkinter as tk
 import tkinter.font as tkf
 import datetime as dt
 from datetime import datetime as dts
+from threading import Thread
 import os
+from time import *
 root = tk.Tk()
 root.geometry("640x300")
 root.title("File Formatter")
 root.configure(bg="blue")
+stopper = False
+class timer(Thread):
+	def run(self):
+		h = 0
+		m = 0
+		s = 0
+		while(True):
+			tmr = tk.Label(text = "Time -   {}:{}:{}".format(h,m,s))
+			tmr.configure(bg="blue",foreground="white")
+			tmr.pack(side = tk.LEFT)
+			cnvs.create_window(460,20,window = tmr)
+			sleep(1)
+			s+=1
+			if s == 60:
+				s = 0
+				m+=1
+			if m == 60:
+				m = 0
+				h += 1
+			if stopper == False:
+				s = 0
+				m = 0
+				h = 0
+				return
+obj1 = timer()
 #FILE CREATE CODE START
-
 # Label
 fn1 = tkf.Font(size=20)
 title = tk.Label(root,text="File Formatter")
@@ -38,6 +64,8 @@ cnvs.create_window(270,55,window = entry)
 
 #'''
 def file_creator():
+	global stopper
+	stopper = True
 	name = entry.get()
 	s = "/*\n"
 	s += "	Author :- Tanay Kulkarni\n"
@@ -62,6 +90,8 @@ def file_creator():
 	f = open(name,'w')
 	f.write(s)
 	f.close()
+	
+	obj1.start()
 #	os.system("subl {}".format(name))
 # Button
 bf = tkf.Font(size=10)
@@ -84,6 +114,9 @@ fn2 = tkf.Font(family="Lucida Console")
 entry2.configure(bg="white",font=fn2)
 entry2.pack(side=tk.RIGHT,padx=10,pady=10)
 cnvs.create_window(270,120,window = entry2)
+def sst():
+	global stopper
+	stopper = False
 def runner():
 	cm = entry2.get()
 	os.system(cm)
@@ -93,4 +126,6 @@ btn2.configure(font=bf,bg="yellow",foreground="black")
 btn2.pack(side=tk.RIGHT,padx=10,pady = 20)
 cnvs2.create_window(50,120,window = btn2)
 # CMD CODE END
+#global stopper
+sst()
 root.mainloop()	
