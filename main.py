@@ -5,13 +5,13 @@ from datetime import datetime as dts
 import os
 root = tk.Tk()
 root.geometry("640x300")
-root.title("TCrator")
+root.title("File Formatter")
 root.configure(bg="blue")
 #FILE CREATE CODE START
 
 # Label
 fn1 = tkf.Font(size=20)
-title = tk.Label(root,text="TCrator")
+title = tk.Label(root,text="File Formatter")
 title.configure(bg="blue",foreground="white",font=fn1)
 title.pack()
 #canvas One
