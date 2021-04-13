@@ -109,8 +109,16 @@ def file_creator():
 	s+="*/\n"
 	s+= "#include<bits/stdc++.h>\n"
 	s+= "using namespace std;\n"
+	s+= "void test_case(){\n"
+	s+= 'puts("");\n'
+	s+= "}\n"
 	s+= "int main(){\n"
-	s+= "\n"
+	s+="int t;\n"
+	s+="cin>>t;\n"
+	s+="for(int i = 1;i<=t;i++){\n"
+	s+='cout<<"Case #"<<i<<": ";\n'
+	s+="test_case();\n"
+	s+="}"
 	s+= "return 0;\n"
 	s+="}\n"
 	name+=".cpp"
