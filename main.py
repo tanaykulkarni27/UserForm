@@ -95,21 +95,47 @@ def file_creator():
 	ee()
 	name = entry.get()
 	s = "/*\n"
-	s += "	Author :- Tanay Kulkarni\n"
-	s +=  "	Date   :- "
+	s += "*	Author :- Tanay Kulkarni\n"
+	s +=  "*	Date   :- "
 	obj = dts.now()
 	s+= "{}-{}-{}".format(obj.day,obj.month,obj.year)
 	s+="\n"
 	s+= "	Time   :- "
 	s+= str(dts.now().time())
 	s+="\n"
-	s +=  "	Name   :- "
+	s +=  "*	Name   :- "
 	s+=name
 	s+=".cpp \n"
 	s+="*/\n"
 	s+= "#include<bits/stdc++.h>\n"
 	s+= "using namespace std;\n"
-	s+= "void test_case(){\n"
+	# debug code start
+	s+='void debug(string j){'
+	s+='\n'
+	s+='cout<<"| Value : "<<j<<" |\\n";'
+	s+='\n'
+	s+='}'
+	s+='\n'
+	s+='void debug(int j){'
+	s+='\n'
+	s+='cout<<"| Value : "<<j<<" |\\n";'
+	s+='\n'
+	s+='}'
+	s+='\n'
+	s+='void debug(int i,string j){'
+	s+='\n'
+	s+='cout<<"Iteration "<<i<<": "<<j<<"\\n";'
+	s+='\n'
+	s+='}'
+	s+='\n'
+	s+='void debug(int i,int j){'
+	s+='\n'
+	s+='cout<<"Iteration "<<i<<": "<<j<<"\\n";'
+	s+='\n'
+	s+='}'
+	s+='\n'
+	# debug code start
+	s+= "void testcase(){\n"
 	s+= 'puts("");\n'
 	s+= "}\n"
 	s+= "int main(){\n"
@@ -117,8 +143,8 @@ def file_creator():
 	s+="cin>>t;\n"
 	s+="for(int i = 1;i<=t;i++){\n"
 	s+='		cout<<"Case #"<<i<<": ";\n'
-	s+="		test_case();\n"
-	s+="}"
+	s+="		testcase();\n"
+	s+="}\n"
 	s+= "return 0;\n"
 	s+="}\n"
 	name+=".cpp"
