@@ -7,7 +7,8 @@ root.geometry("1280x720")
 root.title(" MYIDE")
 def workspace():
 	font_object = Font(family = "Lucida Console",size = 13)
-	a = Text(root,width = 92,height = 20,bg = "blue",foreground="YELLOW",font = font_object);
+	tb = font_object.measure('    ')
+	a = Text(root,width = 92,height = 20,bg = "blue",foreground="YELLOW",font = font_object,cursor = 'xterm #FFFFFF',tabs=tb);
 	a.pack()
 	return a
 def crater():
@@ -50,13 +51,13 @@ def write_file():
 		
 	fl.close()
 def file_create_button():
-	btn = Button(root,width = 10,text = "Create or Save",command = write_file)
+	btn = Button(root,width = 10,text = "Open or Save",command = write_file)
 	btn.pack(padx = 10)
 	return btn
 def opn():
-	os.system('./formatter')
+	os.system('./creater')
 def file_formatter_button():
-	btn = Button(root,width = 15,text = 'Open File Formatter',command = opn)
+	btn = Button(root,width = 15,text = 'Open File Creater',command = opn)
 	btn.pack(padx = 10)
 	return btn
 create_file_button = file_create_button()
