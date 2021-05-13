@@ -97,10 +97,10 @@ def run():
 			os.system(cmd)		
 	except Exception as e:
 		pass		
-	a = Text(root,width = 47,height = 10,bg = 'blue',wrap = None)
+	a = Text(root,width = 45,height = 12,bg = 'blue',wrap = None)
 	a.configure(foreground = 'white')
 	a.pack(fill = X)
-	cnvs.create_window(840,615,window = a)
+	cnvs.create_window(835,589,window = a)
 	a.insert(END,output.read())
 def run_f_btn():
 	btn = Button(root,width=10,bg='yellow',text="Run File",command = lambda:run())
