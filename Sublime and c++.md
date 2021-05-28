@@ -23,5 +23,3 @@ For Python
 "selector":"source.py,source.python"<br>
 }<br>
 <hr>
-<p> " sudo apt-get update <br>
-sudo apt-get install terminator " use this code if ubuntu version is less then lts 20.04 </p>
