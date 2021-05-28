@@ -6,18 +6,12 @@ this the code to build system on sublime
 <p style="color: red">
 <hr>
 {<br>
-"cmd": ["g++", "-std=c++14", "$file", "-o", "${file_path}/${file_base_name}"],<br>
-"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",<br>
-"working_dir": "${file_path}",<br>
-"selector": "source.c, source.c++, source.cxx, source.cpp",<br>
-"variants":<br>
-[<br>
-{<br>
-"name": "Run",<br>
-"cmd": ["bash", "-c", "g++ -std=c++14 '${file}' -o '${file_path}/${file_base_name}' && terminator -x bash -c '\"${file_path}/${file_base_name}\" ; read'"]<br>
+"cmd": ["g++ -std=c++17 $file_base_name.cpp -o $file_base_name && ./$file_base_name < in.in >out.in && python3 test.py > verdict"],<br>
+"shell":true,<br>
+"working_dir":"$file_path",<br>
+ "selector": "source.c, source.c++,source.C++,source.C",<br>
 }<br>
-]<br>
-}<br>
+
 </p>
 <hr>
 <p> " sudo apt-get update <br>
