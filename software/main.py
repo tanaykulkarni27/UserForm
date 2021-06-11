@@ -175,30 +175,3 @@ cnvs2.create_window(50,20,window = btn3)
 #global stopper
 ee()
 root.mainloop()	
-'''
-s+='void debug(string j){')
-s+='\n'
-s+='cout<<"| Value : "<<j<<" |\n";')
-s+='\n'
-s+='}'
-s+='\n'
-s+='void debug(int j){'
-s+='\n'
-s+='cout<<"| Value : "<<j<<" |\n";')
-s+='\n'
-s+='}'
-s+='\n'
-s+='void debug(int i,string j){'
-s+='\n'
-s+='cout<<"Iteration "<<i<<": "<<j<<"\n";'
-s+='\n'
-s+='}'
-s+='\n'
-s+='void debug(int i,int j){'
-s+='\n'
-s+='cout<<"Iteration "<<i<<": "<<j<<"\n";'
-s+='\n'
-s+='}'
-s+='\n'
-'''
-
