@@ -1,0 +1,6 @@
+{
+"cmd": ["javac $file_base_name.java && java $file_base_name < in.in > out.run"],
+"shell":true,
+"working_dir":"$file_path",
+"selector":"source.java,source.JAVA"
+}

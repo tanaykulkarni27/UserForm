@@ -1,0 +1,8 @@
+{
+// "cmd": ["g++ -std=c++17 $file_base_name.cpp -o $file_base_name && ./$file_base_name < in.in >out.run"],
+"cmd" : ["g++ -std=c++17 -Wshadow -Wall -o $file_base_name $file_base_name.cpp   -O2  -Wno-unused-result && ./$file_base_name < in.in > out.run"],
+"shell":true,
+"working_dir":"$file_path",
+ "selector": "source.c, source.c++,source.C++,source.C",
+}
+

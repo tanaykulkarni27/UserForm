@@ -1,0 +1,7 @@
+{
+"cmd": ["python3 $file_base_name.py < in.in > out.run"],
+"shell":true,
+"working_dir":"$file_path",
+"selector":"source.py,source.python"
+}
+
